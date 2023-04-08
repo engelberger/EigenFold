@@ -406,3 +406,13 @@ edge_sh = o3.spherical_harmonics(self.sh_irreps, edge_vec, normalize=True, norma
 ```
 
 The method returns the node attributes, edge indices, edge attributes, and spherical harmonics representations to be used in the forward pass of the model.
+
+The `ResiLevelTensorProductScoreModel` class is designed to process input data and compute output scores using tensor product-based convolutional layers. The main components of this model include:
+
+1. Initialization: The model is initialized with various layers and parameters, such as timestep embeddings, spherical harmonics representations, node and edge embeddings, a distance expansion function, and convolutional layers.
+
+2. Forward pass: In the forward pass, the model processes the input data using the initialized layers and functions. It starts by preprocessing the node and edge attributes, building the convolution graph, applying the node and edge embeddings, and then running the convolutional layers. Finally, the model computes the output scores using the final tensor product layer and returns the result.
+
+3. Building the convolution graph: The `build_conv_graph` method creates the input graph for the convolutional layers by extracting and processing the node attributes, edge attributes, and spherical harmonics representations from the input data.
+
+Overall, the `ResiLevelTensorProductScoreModel` class provides a flexible and modular approach to implement a neural network model that can handle complex input data and compute scores using tensor product-based convolutional layers.
